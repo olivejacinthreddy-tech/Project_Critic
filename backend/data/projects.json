@@ -1,0 +1,901 @@
+[
+  {
+    "projectOverview": {
+      "title": "AI-Based Smart Campus Assistant",
+      "idea": "An intelligent AI-powered campus assistant web and mobile platform that helps university students navigate campus facilities, query real-time lecture timetables, find vacant study rooms via sensor integration, submit academic queries using a customized Retrieval-Augmented Generation (RAG) campus knowledge base, and receive personalized reminders for assignments and campus events.",
+      "description": "A comprehensive campus assistant integrating institutional data (courses, maps, schedules) with an AI conversational agent. Solves fragmented student information portals by centralizing routine campus tasks and queries into a single conversational interface.",
+      "targetUsers": "Undergraduate and postgraduate students, visiting guests, campus faculty, and department administrators.",
+      "problemStatement": "Students waste time checking multiple disjointed departmental websites, bulletin boards, and PDFs for lecture hall changes, room availability, and syllabus queries. Staff are overwhelmed by repetitive informational questions.",
+      "preferredTech": "React, Node.js, Express, MongoDB, Gemini API / LangChain, Pinecone Vector DB, Tailwind CSS / Vanilla CSS",
+      "projectType": "Web Application",
+      "timeline": "4–6 weeks",
+      "teamSize": "3 students",
+      "skillLevel": "Intermediate",
+      "budget": "$50 - $100 for API & hosting"
+    },
+    "scores": {
+      "overallScore": 8.4,
+      "originality": 7.6,
+      "feasibility": 8.2,
+      "technicalComplexity": 8.8,
+      "practicalValue": 8.3,
+      "aiSuitability": 8.6,
+      "innovationPotential": 7.3
+    },
+    "verdict": "Recommended with Improvements",
+    "agentResults": {
+      "research": {
+        "commonSolutions": [
+          "Ellucian Mobile / Campus Consortium Apps (Standard University Portals)",
+          "Canvas / Blackboard LMS mobile companion apps",
+          "Discord / Slack bots configured for student clubs and coursework reminders"
+        ],
+        "similarCategories": [
+          "Campus Information Systems (CIS)",
+          "Educational Conversational AI",
+          "Smart Campus Facility Management"
+        ],
+        "noveltyLevel": "Moderately differentiated",
+        "explanation": "Campus portal and query chatbots are common in university repositories. However, systems that combine real-time sensor occupancy (vacant labs/study spots) with verified institutional RAG knowledge bases are moderately differentiated compared to basic static FAQ bots.",
+        "differentiationAreas": [
+          "Integration with live IoT desk/room availability occupancy sensors rather than static timetables.",
+          "RAG system with verifiable citations pointing directly to departmental handbook clauses.",
+          "Offline-first progressive web app capability for low-connectivity auditorium basements."
+        ],
+        "findingsSummary": "While general student portals are common, integrating real-time physical space telemetry with conversational departmental RAG provides a strong competitive edge for a minor project."
+      },
+      "technology": {
+        "frontend": {
+          "name": "React + Vite with Chart.js",
+          "reason": "Provides a fast, reactive telemetry dashboard for real-time sensor updates and device telemetry."
+        },
+        "backend": {
+          "name": "Python (FastAPI) & Node.js Bridge",
+          "reason": "FastAPI efficiently processes camera image streams and edge data, while Node.js manages web socket events."
+        },
+        "database": {
+          "name": "MongoDB or SQLite",
+          "reason": "Flexible document storage for telemetry event logs and bin sensor time-series data."
+        },
+        "aiTechnologies": {
+          "name": "TensorFlow Lite / MobileNetV2",
+          "reason": "Optimized for high-fps, low-latency quantized computer vision inference directly on embedded edge hardware."
+        },
+        "apis": {
+          "name": "MQTT Protocol & WebSockets",
+          "reason": "Lightweight publish-subscribe protocol ideal for low-bandwidth microcontroller communication."
+        },
+        "authentication": {
+          "name": "JWT (JSON Web Tokens)",
+          "reason": "Stateless, lightweight token authentication suitable for securing telemetry endpoints and admin portals."
+        },
+        "hosting": {
+          "name": "Render / Railway (Cloud) & Raspberry Pi OS (Edge)",
+          "reason": "Zero-cost student cloud tiers for the central server combined with Linux edge hardware."
+        },
+        "optional": [
+          {
+            "name": "Redis Cache",
+            "reason": "Speeds up live device status checks without overloading disk storage."
+          },
+          {
+            "name": "Docker",
+            "reason": "Ensures containerized reproducibility between the student laptop and target hardware."
+          }
+        ],
+        "summary": "A hybrid edge-cloud architecture that separates real-time hardware inference from user-facing cloud analytics."
+      },
+      "feasibility": {
+        "technicalScore": 8.2,
+        "timeScore": 7.8,
+        "skillScore": 8.1,
+        "resourceScore": 8.5,
+        "aiScore": 8.6,
+        "overallFeasibilityScore": 8.2,
+        "explanations": {
+          "technical": "Standard web frameworks and established REST patterns make the core architecture reliable and well-documented for minor project development.",
+          "time": "With a team of 3 students students, a prototype can be completed within 4–6 weeks by scoping to essential core MVP features first.",
+          "skill": "Appropriate for an Intermediate skill level; developers familiar with modern JavaScript and basic API calls can implement the logic comfortably.",
+          "resource": "All development can be conducted on standard student laptops with free-tier cloud hosting (Render/Vercel) and free API developer quotas.",
+          "ai": "Modern LLMs like Gemini provide predictable structured JSON extraction and RAG capabilities with minimal prompt tuning."
+        },
+        "summary": "High overall feasibility (8.2/10). The technical stack is well within minor project bounds if the initial release focuses strictly on core workflows."
+      },
+      "originality": {
+        "originalityScore": 7.6,
+        "commonalityAssessment": "The overarching concept tackles a widely-experienced problem with recognized commercial and academic precedents. While similar core solutions exist, the project achieves moderate differentiation through contextual agent specialization rather than broad generic automation.",
+        "existingResemblance": [
+          "Resembles traditional university portal apps and departmental bulletin boards",
+          "Resembles standard FAQ retrieval bots commonly found in college repositories",
+          "Resembles static calendar schedule viewing interfaces"
+        ],
+        "uniqueAngleSuggestions": [
+          "Integrate autonomous proactive alerts (e.g. notify students of sudden room schedule changes or impending deadlines).",
+          "Implement verifiable RAG grounded strictly in uploaded institutional syllabi and circulars with page references.",
+          "Add crowd-sourced telemetry or study desk occupancy voting to create a live communal utility."
+        ],
+        "differentiationTips": [
+          "Frame the project during college presentation as an Agentic Campus Assistant with multi-step reasoning, not merely a single-turn chatbot.",
+          "Highlight data reliability through source citations to overcome evaluator skepticism regarding AI hallucinations."
+        ]
+      },
+      "costAndComplexity": {
+        "complexityLevel": "Difficult",
+        "estimatedDuration": "6–8 weeks",
+        "estimatedCostRange": "$40 - $90 (Hardware components + Cloud Free Tier)",
+        "costExplanation": "Hardware procurement (Raspberry Pi/ESP32, camera module, servo motors) incurs a one-time student investment, whereas cloud backend telemetry can remain entirely on free tiers.",
+        "thirdPartyServices": [
+          "Google Cloud / AWS IoT Core",
+          "Render free tier",
+          "MongoDB Atlas M0 Free Cluster"
+        ],
+        "apiRequirements": "Minimal cloud API consumption if vision inference runs directly on-device; periodic telemetry syncing requires under 10k monthly requests.",
+        "databaseRequirements": "Lightweight time-series collection under 512MB on MongoDB Atlas free cluster.",
+        "hostingRequirements": "Static frontend hosted on Vercel; edge daemon operating on Linux systemd service."
+      },
+      "critic": {
+        "overallScore": 8.4,
+        "verdict": "Recommended with Improvements",
+        "suitabilityVerdict": "Exceptionally well-suited for a college minor project. The problem domain is directly relatable to academic faculty, demonstrating practical software engineering, vector search RAG, and live API integration.",
+        "strengths": [
+          "High practical relevance with immediate usability for students and faculty on campus.",
+          "Demonstrates contemporary GenAI techniques (RAG, prompt grounding) beyond simple prompt wrappers.",
+          "Clear modular boundaries allowing team members to divide frontend, API backend, and AI pipeline efficiently.",
+          "Strong demonstration potential during project viva with live queries and room availability checks."
+        ],
+        "weaknesses": [
+          "Risk of being perceived as a generic chatbot if the physical campus telemetry and RAG citations are omitted.",
+          "Potential API latency when querying large document indexes on low-tier student hosting.",
+          "Dependency on initial manual data ingestion of campus handbooks and timetables."
+        ],
+        "risks": [
+          "Hallucination risk: Generative AI providing outdated exam rules without strict RAG source grounding.",
+          "Data drift: Timetable changes or room reallocations requiring automated synchronization mechanisms.",
+          "Scope creep: Attempting to build an entire ERP campus portal rather than polishing the core AI assistant."
+        ],
+        "recommendedFeatures": {
+          "mustHave": [
+            "Conversational RAG query engine grounded in departmental FAQ & syllabus documents",
+            "Real-time lecture schedule viewer with room locator",
+            "Role-based interface separating student views from admin document uploaders",
+            "Clean response citation tags showing source document and section"
+          ],
+          "shouldHave": [
+            "Proactive notification alerts for upcoming assignment deadlines and room changes",
+            "Study room / library desk occupancy estimation indicator",
+            "Offline query caching for frequently asked campus policies"
+          ],
+          "optional": [
+            "Multilingual audio query input using Speech-to-Text for international exchange students",
+            "Interactive 2D campus map route guidance with SVG floor plans"
+          ]
+        },
+        "conclusion": "This project is a stellar contender for a college minor project. By prioritizing grounded RAG answers with citations and adding a live occupancy angle, the team will easily exceed academic grading criteria while delivering real campus value."
+      }
+    },
+    "metadata": {
+      "engineUsed": "Gemini 2.5 Flash",
+      "isSample": false
+    },
+    "_id": "5346e2c5-da73-435a-ae64-62092f6e0265",
+    "createdAt": "2026-10-05T17:42:42.466Z",
+    "updatedAt": "2026-10-05T17:42:42.466Z"
+  },
+  {
+    "projectOverview": {
+      "title": "PeerStudy: AI Group Matchmaker",
+      "idea": "A campus platform for automatic study group matchmaking and peer notes sharing using vector search",
+      "description": "",
+      "targetUsers": "Undergraduate students and university campus community",
+      "problemStatement": "Fragmented processes and lack of centralized assistance.",
+      "preferredTech": "",
+      "projectType": "Web Application",
+      "timeline": "4–6 weeks",
+      "teamSize": "2-3",
+      "skillLevel": "Intermediate",
+      "budget": "Student Free Tier"
+    },
+    "scores": {
+      "overallScore": 8.4,
+      "originality": 7.6,
+      "feasibility": 8.2,
+      "technicalComplexity": 7.2,
+      "practicalValue": 8.3,
+      "aiSuitability": 8.6,
+      "innovationPotential": 7.3
+    },
+    "verdict": "Recommended with Improvements",
+    "agentResults": {
+      "research": {
+        "commonSolutions": [
+          "Ellucian Mobile / Campus Consortium Apps (Standard University Portals)",
+          "Canvas / Blackboard LMS mobile companion apps",
+          "Discord / Slack bots configured for student clubs and coursework reminders"
+        ],
+        "similarCategories": [
+          "Campus Information Systems (CIS)",
+          "Educational Conversational AI",
+          "Smart Campus Facility Management"
+        ],
+        "noveltyLevel": "Moderately differentiated",
+        "explanation": "Campus portal and query chatbots are common in university repositories. However, systems that combine real-time sensor occupancy (vacant labs/study spots) with verified institutional RAG knowledge bases are moderately differentiated compared to basic static FAQ bots.",
+        "differentiationAreas": [
+          "Integration with live IoT desk/room availability occupancy sensors rather than static timetables.",
+          "RAG system with verifiable citations pointing directly to departmental handbook clauses.",
+          "Offline-first progressive web app capability for low-connectivity auditorium basements."
+        ],
+        "findingsSummary": "While general student portals are common, integrating real-time physical space telemetry with conversational departmental RAG provides a strong competitive edge for a minor project."
+      },
+      "technology": {
+        "frontend": {
+          "name": "React + Vite (Vanilla CSS / Tailwind)",
+          "reason": "Offers instantaneous hot module reloading, high responsiveness, and clean component-driven state architecture."
+        },
+        "backend": {
+          "name": "Node.js + Express.js",
+          "reason": "Robust non-blocking asynchronous event loop, ideal for coordinating multiple downstream AI agent calls."
+        },
+        "database": {
+          "name": "MongoDB (Mongoose ODM)",
+          "reason": "Highly adaptable JSON-native document model that stores heterogeneous project states and query histories easily."
+        },
+        "aiTechnologies": {
+          "name": "Google Gemini 2.5 Flash API + LangChain / RAG",
+          "reason": "Delivers high token throughput, low latency, and dependable structured output formatting."
+        },
+        "apis": {
+          "name": "Campus / Institutional REST APIs & Server-Sent Events (SSE)",
+          "reason": "Permits live streaming of agent analytical steps and integration with external student information systems."
+        },
+        "authentication": {
+          "name": "JWT with bcryptjs password hashing",
+          "reason": "Self-contained, industry-standard stateless authentication suitable for college academic evaluation."
+        },
+        "hosting": {
+          "name": "Vercel (Frontend) + Render / Railway (Backend)",
+          "reason": "Free student-friendly cloud deployment tiers with automatic continuous integration from GitHub."
+        },
+        "optional": [
+          {
+            "name": "ChromaDB / Pinecone",
+            "reason": "Stores vectorized document chunks for contextual syllabus and handbook retrieval."
+          },
+          {
+            "name": "jsPDF / html2canvas",
+            "reason": "Enables client-side PDF export of analysis reports and transcripts."
+          }
+        ],
+        "summary": "A production-tested MERN + GenAI stack providing rapid development velocity, clean separation of concerns, and zero student hosting fees."
+      },
+      "feasibility": {
+        "technicalScore": 8.2,
+        "timeScore": 7.8,
+        "skillScore": 8.1,
+        "resourceScore": 8.5,
+        "aiScore": 8.6,
+        "overallFeasibilityScore": 8.2,
+        "explanations": {
+          "technical": "Standard web frameworks and established REST patterns make the core architecture reliable and well-documented for minor project development.",
+          "time": "With a team of 2-3 students, a prototype can be completed within 4–6 weeks by scoping to essential core MVP features first.",
+          "skill": "Appropriate for an Intermediate skill level; developers familiar with modern JavaScript and basic API calls can implement the logic comfortably.",
+          "resource": "All development can be conducted on standard student laptops with free-tier cloud hosting (Render/Vercel) and free API developer quotas.",
+          "ai": "Modern LLMs like Gemini provide predictable structured JSON extraction and RAG capabilities with minimal prompt tuning."
+        },
+        "summary": "High overall feasibility (8.2/10). The technical stack is well within minor project bounds if the initial release focuses strictly on core workflows."
+      },
+      "originality": {
+        "originalityScore": 7.6,
+        "commonalityAssessment": "The overarching concept tackles a widely-experienced problem with recognized commercial and academic precedents. While similar core solutions exist, the project achieves moderate differentiation through contextual agent specialization rather than broad generic automation.",
+        "existingResemblance": [
+          "Resembles traditional university portal apps and departmental bulletin boards",
+          "Resembles standard FAQ retrieval bots commonly found in college repositories",
+          "Resembles static calendar schedule viewing interfaces"
+        ],
+        "uniqueAngleSuggestions": [
+          "Integrate autonomous proactive alerts (e.g. notify students of sudden room schedule changes or impending deadlines).",
+          "Implement verifiable RAG grounded strictly in uploaded institutional syllabi and circulars with page references.",
+          "Add crowd-sourced telemetry or study desk occupancy voting to create a live communal utility."
+        ],
+        "differentiationTips": [
+          "Frame the project during college presentation as an Agentic Campus Assistant with multi-step reasoning, not merely a single-turn chatbot.",
+          "Highlight data reliability through source citations to overcome evaluator skepticism regarding AI hallucinations."
+        ]
+      },
+      "costAndComplexity": {
+        "complexityLevel": "Moderate",
+        "estimatedDuration": "4–6 weeks",
+        "estimatedCostRange": "$0 - $10 / month (Fully achievable on Student Free Tiers)",
+        "costExplanation": "For college academic evaluation, standard hosting on Vercel and Render is free. Google AI Studio provides generous free-tier API quotas. Actual future production costs depend on monthly token consumption and active concurrent user scale.",
+        "thirdPartyServices": [
+          "Google Gemini API",
+          "MongoDB Atlas M0 Sandbox",
+          "Vercel / Render Free Hosting"
+        ],
+        "apiRequirements": "Average of 2,000–5,000 token interactions per evaluation test session; well within free Google AI developer limits.",
+        "databaseRequirements": "MongoDB Atlas free M0 cluster (512MB storage), sufficient for storing hundreds of user analyses, schedules, and document indexes.",
+        "hostingRequirements": "Serverless frontend deployment with Node.js container or web service running on free cloud instance."
+      },
+      "critic": {
+        "overallScore": 8.4,
+        "verdict": "Recommended with Improvements",
+        "suitabilityVerdict": "Exceptionally well-suited for a college minor project. The problem domain is directly relatable to academic faculty, demonstrating practical software engineering, vector search RAG, and live API integration.",
+        "strengths": [
+          "High practical relevance with immediate usability for students and faculty on campus.",
+          "Demonstrates contemporary GenAI techniques (RAG, prompt grounding) beyond simple prompt wrappers.",
+          "Clear modular boundaries allowing team members to divide frontend, API backend, and AI pipeline efficiently.",
+          "Strong demonstration potential during project viva with live queries and room availability checks."
+        ],
+        "weaknesses": [
+          "Risk of being perceived as a generic chatbot if the physical campus telemetry and RAG citations are omitted.",
+          "Potential API latency when querying large document indexes on low-tier student hosting.",
+          "Dependency on initial manual data ingestion of campus handbooks and timetables."
+        ],
+        "risks": [
+          "Hallucination risk: Generative AI providing outdated exam rules without strict RAG source grounding.",
+          "Data drift: Timetable changes or room reallocations requiring automated synchronization mechanisms.",
+          "Scope creep: Attempting to build an entire ERP campus portal rather than polishing the core AI assistant."
+        ],
+        "recommendedFeatures": {
+          "mustHave": [
+            "Conversational RAG query engine grounded in departmental FAQ & syllabus documents",
+            "Real-time lecture schedule viewer with room locator",
+            "Role-based interface separating student views from admin document uploaders",
+            "Clean response citation tags showing source document and section"
+          ],
+          "shouldHave": [
+            "Proactive notification alerts for upcoming assignment deadlines and room changes",
+            "Study room / library desk occupancy estimation indicator",
+            "Offline query caching for frequently asked campus policies"
+          ],
+          "optional": [
+            "Multilingual audio query input using Speech-to-Text for international exchange students",
+            "Interactive 2D campus map route guidance with SVG floor plans"
+          ]
+        },
+        "conclusion": "This project is a stellar contender for a college minor project. By prioritizing grounded RAG answers with citations and adding a live occupancy angle, the team will easily exceed academic grading criteria while delivering real campus value."
+      }
+    },
+    "metadata": {
+      "engineUsed": "Gemini 2.5 Flash",
+      "isSample": false
+    },
+    "_id": "ade8d2d5-f5e7-45a6-a132-7dc8dac57372",
+    "createdAt": "2026-10-05T17:30:56.850Z",
+    "updatedAt": "2026-10-05T17:30:56.850Z"
+  },
+  {
+    "projectOverview": {
+      "title": "traffic redusing usind ai",
+      "idea": "my idea is traffic reducing system",
+      "description": "the project explains about the traffic at the particular place and diverts their direction to reduce traffic",
+      "targetUsers": "vehicle holder",
+      "problemStatement": "Fragmented processes and lack of centralized assistance.",
+      "preferredTech": "node.js ,react.js,mysql",
+      "projectType": "Web Application",
+      "timeline": "4–6 weeks",
+      "teamSize": "2-3 students",
+      "skillLevel": "Intermediate",
+      "budget": "$0 - $50 (Free Tiers)"
+    },
+    "scores": {
+      "overallScore": 7.8,
+      "originality": 7.2,
+      "feasibility": 8.2,
+      "technicalComplexity": 7.2,
+      "practicalValue": 8,
+      "aiSuitability": 8.6,
+      "innovationPotential": 7
+    },
+    "verdict": "Recommended with Improvements",
+    "agentResults": {
+      "research": {
+        "commonSolutions": [
+          "Generic web-based productivity and tracking dashboards",
+          "Standard LLM wrapper applications available on GitHub",
+          "Traditional database-backed CRUD portals"
+        ],
+        "similarCategories": [
+          "Web Application",
+          "Interactive Productivity Web Application"
+        ],
+        "noveltyLevel": "Moderately differentiated",
+        "explanation": "Similar workflow and task management tools exist across consumer and enterprise sectors because digital automation is a widespread need. The concept has established benchmarks.",
+        "differentiationAreas": [
+          "Focus on a specialized, underserved sub-demographic with customized UX workflows.",
+          "Incorporate multi-modal or automated agentic verification rather than manual single-step input.",
+          "Provide actionable exportable analytics with lightweight local persistence."
+        ],
+        "findingsSummary": "The project targets a recognized problem space with existing parallels; distinctive value will depend on specialized workflow integration and tailored execution."
+      },
+      "technology": {
+        "frontend": {
+          "name": "React + Vite (Vanilla CSS / Tailwind)",
+          "reason": "Offers instantaneous hot module reloading, high responsiveness, and clean component-driven state architecture."
+        },
+        "backend": {
+          "name": "Node.js + Express.js",
+          "reason": "Robust non-blocking asynchronous event loop, ideal for coordinating multiple downstream AI agent calls."
+        },
+        "database": {
+          "name": "MongoDB (Mongoose ODM)",
+          "reason": "Highly adaptable JSON-native document model that stores heterogeneous project states and query histories easily."
+        },
+        "aiTechnologies": {
+          "name": "Google Gemini 2.5 Flash API + LangChain / RAG",
+          "reason": "Delivers high token throughput, low latency, and dependable structured output formatting."
+        },
+        "apis": {
+          "name": "Campus / Institutional REST APIs & Server-Sent Events (SSE)",
+          "reason": "Permits live streaming of agent analytical steps and integration with external student information systems."
+        },
+        "authentication": {
+          "name": "JWT with bcryptjs password hashing",
+          "reason": "Self-contained, industry-standard stateless authentication suitable for college academic evaluation."
+        },
+        "hosting": {
+          "name": "Vercel (Frontend) + Render / Railway (Backend)",
+          "reason": "Free student-friendly cloud deployment tiers with automatic continuous integration from GitHub."
+        },
+        "optional": [
+          {
+            "name": "ChromaDB / Pinecone",
+            "reason": "Stores vectorized document chunks for contextual syllabus and handbook retrieval."
+          },
+          {
+            "name": "jsPDF / html2canvas",
+            "reason": "Enables client-side PDF export of analysis reports and transcripts."
+          }
+        ],
+        "summary": "A production-tested MERN + GenAI stack providing rapid development velocity, clean separation of concerns, and zero student hosting fees."
+      },
+      "feasibility": {
+        "technicalScore": 8.2,
+        "timeScore": 7.8,
+        "skillScore": 8.1,
+        "resourceScore": 8.5,
+        "aiScore": 8.6,
+        "overallFeasibilityScore": 8.2,
+        "explanations": {
+          "technical": "Standard web frameworks and established REST patterns make the core architecture reliable and well-documented for minor project development.",
+          "time": "With a team of 2-3 students students, a prototype can be completed within 4–6 weeks by scoping to essential core MVP features first.",
+          "skill": "Appropriate for an Intermediate skill level; developers familiar with modern JavaScript and basic API calls can implement the logic comfortably.",
+          "resource": "All development can be conducted on standard student laptops with free-tier cloud hosting (Render/Vercel) and free API developer quotas.",
+          "ai": "Modern LLMs like Gemini provide predictable structured JSON extraction and RAG capabilities with minimal prompt tuning."
+        },
+        "summary": "High overall feasibility (8.2/10). The technical stack is well within minor project bounds if the initial release focuses strictly on core workflows."
+      },
+      "originality": {
+        "originalityScore": 7.2,
+        "commonalityAssessment": "The overarching concept tackles a widely-experienced problem with recognized commercial and academic precedents. While similar core solutions exist, the project achieves moderate differentiation through contextual agent specialization rather than broad generic automation.",
+        "existingResemblance": [
+          "Resembles traditional university portal apps and departmental bulletin boards",
+          "Resembles standard FAQ retrieval bots commonly found in college repositories",
+          "Resembles static calendar schedule viewing interfaces"
+        ],
+        "uniqueAngleSuggestions": [
+          "Integrate autonomous proactive alerts (e.g. notify students of sudden room schedule changes or impending deadlines).",
+          "Implement verifiable RAG grounded strictly in uploaded institutional syllabi and circulars with page references.",
+          "Add crowd-sourced telemetry or study desk occupancy voting to create a live communal utility."
+        ],
+        "differentiationTips": [
+          "Frame the project during college presentation as an Agentic Campus Assistant with multi-step reasoning, not merely a single-turn chatbot.",
+          "Highlight data reliability through source citations to overcome evaluator skepticism regarding AI hallucinations."
+        ]
+      },
+      "costAndComplexity": {
+        "complexityLevel": "Moderate",
+        "estimatedDuration": "4–6 weeks",
+        "estimatedCostRange": "$0 - $10 / month (Fully achievable on Student Free Tiers)",
+        "costExplanation": "For college academic evaluation, standard hosting on Vercel and Render is free. Google AI Studio provides generous free-tier API quotas. Actual future production costs depend on monthly token consumption and active concurrent user scale.",
+        "thirdPartyServices": [
+          "Google Gemini API",
+          "MongoDB Atlas M0 Sandbox",
+          "Vercel / Render Free Hosting"
+        ],
+        "apiRequirements": "Average of 2,000–5,000 token interactions per evaluation test session; well within free Google AI developer limits.",
+        "databaseRequirements": "MongoDB Atlas free M0 cluster (512MB storage), sufficient for storing hundreds of user analyses, schedules, and document indexes.",
+        "hostingRequirements": "Serverless frontend deployment with Node.js container or web service running on free cloud instance."
+      },
+      "critic": {
+        "overallScore": 7.8,
+        "verdict": "Recommended with Improvements",
+        "suitabilityVerdict": "Suitable for a college minor project. The scope is achievable within standard semester constraints, offering clear opportunities to showcase full-stack development and modern AI integration.",
+        "strengths": [
+          "Clear problem statement addressing an identifiable target audience.",
+          "Pragmatic architectural choices that fit student skill levels and free-tier infrastructure.",
+          "High testability and interactive viva demonstration potential."
+        ],
+        "weaknesses": [
+          "Requires clear differentiation from existing open-source counterparts on GitHub.",
+          "Initial setup may require robust edge-case validation to prevent unpredictable AI output."
+        ],
+        "risks": [
+          "Over-reliance on external third-party API availability without local fallbacks.",
+          "Timeline pressure if non-essential secondary features are prioritized ahead of core MVP functionality."
+        ],
+        "recommendedFeatures": {
+          "mustHave": [
+            "Core responsive user dashboard with interactive state management",
+            "Structured AI integration with error-handled responses",
+            "Persistent data storage for user sessions and history"
+          ],
+          "shouldHave": [
+            "Exportable analytical reports (PDF / JSON download)",
+            "Filterable search and comparison tool for historical records"
+          ],
+          "optional": [
+            "Dark / Light mode theme customization",
+            "Automated webhook notifications"
+          ]
+        },
+        "conclusion": "A well-rounded project concept with solid feasibility. Implementing the suggested differentiation tips will guarantee a top-tier evaluation from academic examiners."
+      }
+    },
+    "metadata": {
+      "engineUsed": "Gemini 2.5 Flash",
+      "isSample": false
+    },
+    "_id": "0553fc61-a786-46e3-8eee-c1586b3fbbe3",
+    "createdAt": "2026-10-05T17:18:15.993Z",
+    "updatedAt": "2026-10-05T17:18:15.993Z"
+  },
+  {
+    "projectOverview": {
+      "title": "EcoSort: Edge-AI Automated Waste Segregation Bin",
+      "idea": "An automated IoT smart dustbin with camera and Raspberry Pi running a computer vision model to sort recyclables.",
+      "description": "",
+      "targetUsers": "Undergraduate students and university campus community",
+      "problemStatement": "Fragmented processes and lack of centralized assistance.",
+      "preferredTech": "",
+      "projectType": "IoT",
+      "timeline": "8–10 weeks",
+      "teamSize": "2-3",
+      "skillLevel": "Intermediate",
+      "budget": "Student Free Tier"
+    },
+    "scores": {
+      "overallScore": 7.8,
+      "originality": 7.2,
+      "feasibility": 8.2,
+      "technicalComplexity": 8.8,
+      "practicalValue": 8,
+      "aiSuitability": 8.6,
+      "innovationPotential": 7
+    },
+    "verdict": "Recommended with Improvements",
+    "agentResults": {
+      "research": {
+        "commonSolutions": [
+          "CleanCube / Bigbelly Smart Waste Bins",
+          "Raspberry Pi OpenCV Garbage Classifier open-source projects",
+          "TrashBot by CleanRobotics"
+        ],
+        "similarCategories": [
+          "Smart Cities",
+          "Edge Computer Vision IoT",
+          "Automated Waste Segregation"
+        ],
+        "noveltyLevel": "Moderately differentiated",
+        "explanation": "Computer vision waste classification is a popular engineering capstone theme. Hardware-software segregation bins exist commercially in municipal sectors, but low-cost edge prototypes built with Raspberry Pi and lightweight models remain appealing for college demonstrations.",
+        "differentiationAreas": [
+          "Edge quantized inference model (e.g. MobileNetV2 INT8) operating without continuous internet access.",
+          "Mechanical multi-compartment flap mechanism with jam-detection sensors.",
+          "Cloud analytics telemetry tracking contamination percentage and bin fill levels."
+        ],
+        "findingsSummary": "Automated waste sorting is a known concept; differentiating via on-device quantized edge inference and real-time fleet telemetry elevates it above generic capstones."
+      },
+      "technology": {
+        "frontend": {
+          "name": "React + Vite with Chart.js",
+          "reason": "Provides a fast, reactive telemetry dashboard for real-time sensor updates and device telemetry."
+        },
+        "backend": {
+          "name": "Python (FastAPI) & Node.js Bridge",
+          "reason": "FastAPI efficiently processes camera image streams and edge data, while Node.js manages web socket events."
+        },
+        "database": {
+          "name": "MongoDB or SQLite",
+          "reason": "Flexible document storage for telemetry event logs and bin sensor time-series data."
+        },
+        "aiTechnologies": {
+          "name": "TensorFlow Lite / MobileNetV2",
+          "reason": "Optimized for high-fps, low-latency quantized computer vision inference directly on embedded edge hardware."
+        },
+        "apis": {
+          "name": "MQTT Protocol & WebSockets",
+          "reason": "Lightweight publish-subscribe protocol ideal for low-bandwidth microcontroller communication."
+        },
+        "authentication": {
+          "name": "JWT (JSON Web Tokens)",
+          "reason": "Stateless, lightweight token authentication suitable for securing telemetry endpoints and admin portals."
+        },
+        "hosting": {
+          "name": "Render / Railway (Cloud) & Raspberry Pi OS (Edge)",
+          "reason": "Zero-cost student cloud tiers for the central server combined with Linux edge hardware."
+        },
+        "optional": [
+          {
+            "name": "Redis Cache",
+            "reason": "Speeds up live device status checks without overloading disk storage."
+          },
+          {
+            "name": "Docker",
+            "reason": "Ensures containerized reproducibility between the student laptop and target hardware."
+          }
+        ],
+        "summary": "A hybrid edge-cloud architecture that separates real-time hardware inference from user-facing cloud analytics."
+      },
+      "feasibility": {
+        "technicalScore": 8.2,
+        "timeScore": 7.8,
+        "skillScore": 8.1,
+        "resourceScore": 8.5,
+        "aiScore": 8.6,
+        "overallFeasibilityScore": 8.2,
+        "explanations": {
+          "technical": "Standard web frameworks and established REST patterns make the core architecture reliable and well-documented for minor project development.",
+          "time": "With a team of 2-3 students, a prototype can be completed within 4–6 weeks by scoping to essential core MVP features first.",
+          "skill": "Appropriate for an Intermediate skill level; developers familiar with modern JavaScript and basic API calls can implement the logic comfortably.",
+          "resource": "All development can be conducted on standard student laptops with free-tier cloud hosting (Render/Vercel) and free API developer quotas.",
+          "ai": "Modern LLMs like Gemini provide predictable structured JSON extraction and RAG capabilities with minimal prompt tuning."
+        },
+        "summary": "High overall feasibility (8.2/10). The technical stack is well within minor project bounds if the initial release focuses strictly on core workflows."
+      },
+      "originality": {
+        "originalityScore": 7.2,
+        "commonalityAssessment": "The overarching concept tackles a widely-experienced problem with recognized commercial and academic precedents. While similar core solutions exist, the project achieves moderate differentiation through contextual agent specialization rather than broad generic automation.",
+        "existingResemblance": [
+          "Resembles traditional university portal apps and departmental bulletin boards",
+          "Resembles standard FAQ retrieval bots commonly found in college repositories",
+          "Resembles static calendar schedule viewing interfaces"
+        ],
+        "uniqueAngleSuggestions": [
+          "Integrate autonomous proactive alerts (e.g. notify students of sudden room schedule changes or impending deadlines).",
+          "Implement verifiable RAG grounded strictly in uploaded institutional syllabi and circulars with page references.",
+          "Add crowd-sourced telemetry or study desk occupancy voting to create a live communal utility."
+        ],
+        "differentiationTips": [
+          "Frame the project during college presentation as an Agentic Campus Assistant with multi-step reasoning, not merely a single-turn chatbot.",
+          "Highlight data reliability through source citations to overcome evaluator skepticism regarding AI hallucinations."
+        ]
+      },
+      "costAndComplexity": {
+        "complexityLevel": "Difficult",
+        "estimatedDuration": "6–8 weeks",
+        "estimatedCostRange": "$40 - $90 (Hardware components + Cloud Free Tier)",
+        "costExplanation": "Hardware procurement (Raspberry Pi/ESP32, camera module, servo motors) incurs a one-time student investment, whereas cloud backend telemetry can remain entirely on free tiers.",
+        "thirdPartyServices": [
+          "Google Cloud / AWS IoT Core",
+          "Render free tier",
+          "MongoDB Atlas M0 Free Cluster"
+        ],
+        "apiRequirements": "Minimal cloud API consumption if vision inference runs directly on-device; periodic telemetry syncing requires under 10k monthly requests.",
+        "databaseRequirements": "Lightweight time-series collection under 512MB on MongoDB Atlas free cluster.",
+        "hostingRequirements": "Static frontend hosted on Vercel; edge daemon operating on Linux systemd service."
+      },
+      "critic": {
+        "overallScore": 7.8,
+        "verdict": "Recommended with Improvements",
+        "suitabilityVerdict": "Suitable for a college minor project. The scope is achievable within standard semester constraints, offering clear opportunities to showcase full-stack development and modern AI integration.",
+        "strengths": [
+          "Clear problem statement addressing an identifiable target audience.",
+          "Pragmatic architectural choices that fit student skill levels and free-tier infrastructure.",
+          "High testability and interactive viva demonstration potential."
+        ],
+        "weaknesses": [
+          "Requires clear differentiation from existing open-source counterparts on GitHub.",
+          "Initial setup may require robust edge-case validation to prevent unpredictable AI output."
+        ],
+        "risks": [
+          "Over-reliance on external third-party API availability without local fallbacks.",
+          "Timeline pressure if non-essential secondary features are prioritized ahead of core MVP functionality."
+        ],
+        "recommendedFeatures": {
+          "mustHave": [
+            "Core responsive user dashboard with interactive state management",
+            "Structured AI integration with error-handled responses",
+            "Persistent data storage for user sessions and history"
+          ],
+          "shouldHave": [
+            "Exportable analytical reports (PDF / JSON download)",
+            "Filterable search and comparison tool for historical records"
+          ],
+          "optional": [
+            "Dark / Light mode theme customization",
+            "Automated webhook notifications"
+          ]
+        },
+        "conclusion": "A well-rounded project concept with solid feasibility. Implementing the suggested differentiation tips will guarantee a top-tier evaluation from academic examiners."
+      }
+    },
+    "metadata": {
+      "engineUsed": "Gemini 2.5 Flash",
+      "isSample": false
+    },
+    "_id": "1300352d-08a1-406e-b914-e6de06cf30fe",
+    "createdAt": "2026-10-05T17:12:29.411Z",
+    "updatedAt": "2026-10-05T17:12:29.411Z"
+  },
+  {
+    "projectOverview": {
+      "title": "AI-Based Smart Campus Assistant",
+      "idea": "An AI campus assistant for navigating campus facilities and querying timetables with RAG",
+      "description": "",
+      "targetUsers": "Undergraduate students and university campus community",
+      "problemStatement": "Fragmented processes and lack of centralized assistance.",
+      "preferredTech": "",
+      "projectType": "Web Application",
+      "timeline": "4–6 weeks",
+      "teamSize": "2-3",
+      "skillLevel": "Intermediate",
+      "budget": "Student Free Tier"
+    },
+    "scores": {
+      "overallScore": 8.4,
+      "originality": 7.6,
+      "feasibility": 8.2,
+      "technicalComplexity": 7.2,
+      "practicalValue": 8.3,
+      "aiSuitability": 8.6,
+      "innovationPotential": 7.3
+    },
+    "verdict": "Recommended with Improvements",
+    "agentResults": {
+      "research": {
+        "commonSolutions": [
+          "Ellucian Mobile / Campus Consortium Apps (Standard University Portals)",
+          "Canvas / Blackboard LMS mobile companion apps",
+          "Discord / Slack bots configured for student clubs and coursework reminders"
+        ],
+        "similarCategories": [
+          "Campus Information Systems (CIS)",
+          "Educational Conversational AI",
+          "Smart Campus Facility Management"
+        ],
+        "noveltyLevel": "Moderately differentiated",
+        "explanation": "Campus portal and query chatbots are common in university repositories. However, systems that combine real-time sensor occupancy (vacant labs/study spots) with verified institutional RAG knowledge bases are moderately differentiated compared to basic static FAQ bots.",
+        "differentiationAreas": [
+          "Integration with live IoT desk/room availability occupancy sensors rather than static timetables.",
+          "RAG system with verifiable citations pointing directly to departmental handbook clauses.",
+          "Offline-first progressive web app capability for low-connectivity auditorium basements."
+        ],
+        "findingsSummary": "While general student portals are common, integrating real-time physical space telemetry with conversational departmental RAG provides a strong competitive edge for a minor project."
+      },
+      "technology": {
+        "frontend": {
+          "name": "React + Vite (Vanilla CSS / Tailwind)",
+          "reason": "Offers instantaneous hot module reloading, high responsiveness, and clean component-driven state architecture."
+        },
+        "backend": {
+          "name": "Node.js + Express.js",
+          "reason": "Robust non-blocking asynchronous event loop, ideal for coordinating multiple downstream AI agent calls."
+        },
+        "database": {
+          "name": "MongoDB (Mongoose ODM)",
+          "reason": "Highly adaptable JSON-native document model that stores heterogeneous project states and query histories easily."
+        },
+        "aiTechnologies": {
+          "name": "Google Gemini 2.5 Flash API + LangChain / RAG",
+          "reason": "Delivers high token throughput, low latency, and dependable structured output formatting."
+        },
+        "apis": {
+          "name": "Campus / Institutional REST APIs & Server-Sent Events (SSE)",
+          "reason": "Permits live streaming of agent analytical steps and integration with external student information systems."
+        },
+        "authentication": {
+          "name": "JWT with bcryptjs password hashing",
+          "reason": "Self-contained, industry-standard stateless authentication suitable for college academic evaluation."
+        },
+        "hosting": {
+          "name": "Vercel (Frontend) + Render / Railway (Backend)",
+          "reason": "Free student-friendly cloud deployment tiers with automatic continuous integration from GitHub."
+        },
+        "optional": [
+          {
+            "name": "ChromaDB / Pinecone",
+            "reason": "Stores vectorized document chunks for contextual syllabus and handbook retrieval."
+          },
+          {
+            "name": "jsPDF / html2canvas",
+            "reason": "Enables client-side PDF export of analysis reports and transcripts."
+          }
+        ],
+        "summary": "A production-tested MERN + GenAI stack providing rapid development velocity, clean separation of concerns, and zero student hosting fees."
+      },
+      "feasibility": {
+        "technicalScore": 8.2,
+        "timeScore": 7.8,
+        "skillScore": 8.1,
+        "resourceScore": 8.5,
+        "aiScore": 8.6,
+        "overallFeasibilityScore": 8.2,
+        "explanations": {
+          "technical": "Standard web frameworks and established REST patterns make the core architecture reliable and well-documented for minor project development.",
+          "time": "With a team of 2-3 students, a prototype can be completed within 4–6 weeks by scoping to essential core MVP features first.",
+          "skill": "Appropriate for an Intermediate skill level; developers familiar with modern JavaScript and basic API calls can implement the logic comfortably.",
+          "resource": "All development can be conducted on standard student laptops with free-tier cloud hosting (Render/Vercel) and free API developer quotas.",
+          "ai": "Modern LLMs like Gemini provide predictable structured JSON extraction and RAG capabilities with minimal prompt tuning."
+        },
+        "summary": "High overall feasibility (8.2/10). The technical stack is well within minor project bounds if the initial release focuses strictly on core workflows."
+      },
+      "originality": {
+        "originalityScore": 7.6,
+        "commonalityAssessment": "The overarching concept tackles a widely-experienced problem with recognized commercial and academic precedents. While similar core solutions exist, the project achieves moderate differentiation through contextual agent specialization rather than broad generic automation.",
+        "existingResemblance": [
+          "Resembles traditional university portal apps and departmental bulletin boards",
+          "Resembles standard FAQ retrieval bots commonly found in college repositories",
+          "Resembles static calendar schedule viewing interfaces"
+        ],
+        "uniqueAngleSuggestions": [
+          "Integrate autonomous proactive alerts (e.g. notify students of sudden room schedule changes or impending deadlines).",
+          "Implement verifiable RAG grounded strictly in uploaded institutional syllabi and circulars with page references.",
+          "Add crowd-sourced telemetry or study desk occupancy voting to create a live communal utility."
+        ],
+        "differentiationTips": [
+          "Frame the project during college presentation as an Agentic Campus Assistant with multi-step reasoning, not merely a single-turn chatbot.",
+          "Highlight data reliability through source citations to overcome evaluator skepticism regarding AI hallucinations."
+        ]
+      },
+      "costAndComplexity": {
+        "complexityLevel": "Moderate",
+        "estimatedDuration": "4–6 weeks",
+        "estimatedCostRange": "$0 - $10 / month (Fully achievable on Student Free Tiers)",
+        "costExplanation": "For college academic evaluation, standard hosting on Vercel and Render is free. Google AI Studio provides generous free-tier API quotas. Actual future production costs depend on monthly token consumption and active concurrent user scale.",
+        "thirdPartyServices": [
+          "Google Gemini API",
+          "MongoDB Atlas M0 Sandbox",
+          "Vercel / Render Free Hosting"
+        ],
+        "apiRequirements": "Average of 2,000–5,000 token interactions per evaluation test session; well within free Google AI developer limits.",
+        "databaseRequirements": "MongoDB Atlas free M0 cluster (512MB storage), sufficient for storing hundreds of user analyses, schedules, and document indexes.",
+        "hostingRequirements": "Serverless frontend deployment with Node.js container or web service running on free cloud instance."
+      },
+      "critic": {
+        "overallScore": 8.4,
+        "verdict": "Recommended with Improvements",
+        "suitabilityVerdict": "Exceptionally well-suited for a college minor project. The problem domain is directly relatable to academic faculty, demonstrating practical software engineering, vector search RAG, and live API integration.",
+        "strengths": [
+          "High practical relevance with immediate usability for students and faculty on campus.",
+          "Demonstrates contemporary GenAI techniques (RAG, prompt grounding) beyond simple prompt wrappers.",
+          "Clear modular boundaries allowing team members to divide frontend, API backend, and AI pipeline efficiently.",
+          "Strong demonstration potential during project viva with live queries and room availability checks."
+        ],
+        "weaknesses": [
+          "Risk of being perceived as a generic chatbot if the physical campus telemetry and RAG citations are omitted.",
+          "Potential API latency when querying large document indexes on low-tier student hosting.",
+          "Dependency on initial manual data ingestion of campus handbooks and timetables."
+        ],
+        "risks": [
+          "Hallucination risk: Generative AI providing outdated exam rules without strict RAG source grounding.",
+          "Data drift: Timetable changes or room reallocations requiring automated synchronization mechanisms.",
+          "Scope creep: Attempting to build an entire ERP campus portal rather than polishing the core AI assistant."
+        ],
+        "recommendedFeatures": {
+          "mustHave": [
+            "Conversational RAG query engine grounded in departmental FAQ & syllabus documents",
+            "Real-time lecture schedule viewer with room locator",
+            "Role-based interface separating student views from admin document uploaders",
+            "Clean response citation tags showing source document and section"
+          ],
+          "shouldHave": [
+            "Proactive notification alerts for upcoming assignment deadlines and room changes",
+            "Study room / library desk occupancy estimation indicator",
+            "Offline query caching for frequently asked campus policies"
+          ],
+          "optional": [
+            "Multilingual audio query input using Speech-to-Text for international exchange students",
+            "Interactive 2D campus map route guidance with SVG floor plans"
+          ]
+        },
+        "conclusion": "This project is a stellar contender for a college minor project. By prioritizing grounded RAG answers with citations and adding a live occupancy angle, the team will easily exceed academic grading criteria while delivering real campus value."
+      }
+    },
+    "metadata": {
+      "engineUsed": "Gemini 2.5 Flash",
+      "isSample": false
+    },
+    "_id": "f921b198-e7b8-48b1-a567-5adf3b580ec8",
+    "createdAt": "2026-10-05T16:55:53.507Z",
+    "updatedAt": "2026-10-05T16:55:53.507Z"
+  }
+]
